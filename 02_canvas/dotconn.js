@@ -1,7 +1,7 @@
 // lemonwater_soda Johnson Li, Kenny Li
 // SoftDev2 pd7
-// K01 -- ...and I want to Paint It Better
-// 2019-01-31
+// K02 -- Connecting the Dots
+// 2019-02-01
 
 const clear = document.getElementById("clear");
 const canvas = document.getElementById("playground");
@@ -16,11 +16,10 @@ clear.addEventListener("click", () => {
 
 //event listener for drawing on canvas
 canvas.addEventListener("click", (e) => {
-    //defines when a new path is being drawn
     //e.offsetX and e.offsetY give the coordinates relative to the canvas
-    ctx.beginPath()
-    ctx.moveTo(e.offsetX,e.offsetY)
+    ctx.lineTo(e.offsetX,e.offsetY)
+    ctx.moveTo(e.offsetX + 30, e.offsetY)
     ctx.arc(e.offsetX, e.offsetY, 30, 0, 2 * Math.PI);
-    ctx.closePath()
     ctx.stroke()
+    ctx.moveTo(e.offsetX,e.offsetY)
 });
