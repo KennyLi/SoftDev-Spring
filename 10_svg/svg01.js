@@ -7,7 +7,7 @@ var pic = document.getElementById("vimage");
 var clear = document.getElementById("but_clear");
 
 
-pic.addEventListener("click", (e) => {
+pic.addEventListener("click", function (e) {
     var currX = e.offsetX;
     var currY = e.offsetY;
     var c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -16,13 +16,26 @@ pic.addEventListener("click", (e) => {
     c.setAttribute("r", "10");
     c.setAttribute("fill", "blue");
     c.setAttribute("stroke", "black");
-    c.style.pointerEvents = "none";
     pic.appendChild(c);
-    console.log(e.target.childNodes[1])
+    change(c)
 });
 
-clear.addEventListener("click", (e) => {
+function change(child) {
+    child.addEventListener("click", function (e) {
+        e.stopPropagation();
+        if (this.getAttribute('fill') == "blue") {
+            child.setAttribute("fill", "yellow");
+        } else {
+            child.setAttribute("fill", "blue");
+            child.setAttribute("cx", Math.random() * 500);
+            child.setAttribute("cy", Math.random() * 500);
+        }; 
+    });
+};
+
+clear.addEventListener("click", function (e) {
     while (pic.hasChildNodes()) {
         pic.removeChild(pic.firstChild);
     }
-})
+});
+

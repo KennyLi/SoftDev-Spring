@@ -41,4 +41,4 @@ clear.addEventListener("click", (e) => {
     }
     prevX = null;
     prevY = null;
-})
+});
