@@ -49,10 +49,10 @@ var move = function () {
         var currX = parseInt(child.getAttribute("cx")) + xVel;
         var currY = parseInt(child.getAttribute("cy")) + yVel;
 
-        if (currX >= (500 - radius) || currX <= 0) {
+        if (currX >= (500 - radius) || currX <= 10) {
             child.setAttribute("xVel", xVel * -1);
         }
-        if (currY >= (500 - radius) || currY <= 0) {
+        if (currY >= (500 - radius) || currY <= 10) {
             child.setAttribute("yVel", yVel * -1);
         }
 
