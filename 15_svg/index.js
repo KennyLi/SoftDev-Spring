@@ -36,7 +36,7 @@ svg.selectAll("circle")
   .enter()
   .append("circle")
   .attr("cx", function (d) {
-    return xScale(d[0]) + 50
+    return xScale(d[0]) + 100
   })
   .attr("cy", function (d) {
     return yScale(d[1])
@@ -48,15 +48,36 @@ var xAxis = d3.axisBottom()
   .ticks(42);
 
 svg.append("g")
-  .attr("transform", "translate(50, 650)")
+  .attr("transform", "translate(100, 650)")
   .call(xAxis);
 
 var yAxis = d3.axisLeft()
   .scale(yScale)
 
 svg.append("g")
-  .attr("transform", "translate(50, 0)")
+  .attr("transform", "translate(100, 0)")
   .call(yAxis);
 
+svg.append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y",50)
+    .attr("x",-300)
+    .attr("fill","purple")
+    .attr("font","12px sans-serif")
+    .text("Ice Cream Sales($)")
+
+svg.append("text")
+    .attr("y",690)
+    .attr("x",800)
+    .attr("fill","purple")
+    .attr("font","12px sans-serif")
+    .text("Temperature(C)")
+
+svg.append("text")
+    .attr("x", 900)
+    .attr("y", 25)
+    .style("font-size", "16px")
+    .style("text-decoration", "underline")
+    .text("Ice Cream Sales vs Temperature");
 
   // https://www.mathsisfun.com/data/scatter-xy-plots.html
