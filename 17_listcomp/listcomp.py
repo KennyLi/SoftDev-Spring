@@ -1,3 +1,8 @@
+# Pear -- Jiayang Chen & Kenny Li
+# SoftDev2 pd7
+# K17 -- PPFTLCW
+# 2019-04-15
+
 firstL = []
 for i in range(5):
     firstL.append(str(i*22))
@@ -10,54 +15,75 @@ for i in range(5):
 
 secondLC = [i * 10 + 7 for i in range(5)]
 
-def divisors(number):
+thirdL = []
+for i in range(9):
+    thirdL.append((i // 3) * (i % 3))
+
+thirdLC = [(i // 3) * (i % 3) for i in range(9)]
+
+def divisorsL(number):
     factors = []
     for i in range(number):
         if number % (i+1) == 0:
             factors.append(i+1)
     return factors
 
-def divisors_lc(number):
+def divisorsLC(number):
     return [i+1 for i in range(number) if number % (i+1) == 0]
 
-def composites(number):
-    c = []
-    for i in range(100):
-        if len(divisors(i)) > 2:
-            c.append(i)
-    return c
+compositesL = []
+for i in range(101):
+    if len(divisorsLC(i)) > 2:
+        compositesL.append(i)
 
-def composites_lc(number):
-    return [i for i in range(100) if len(divisors(i)) > 2]
+compositesLC = [i for i in range(101) if len(divisorsLC(i)) > 2]
 
-def primes():
-    p = []
-    for i in range(100):
-        if len(divisors(i)) == 2:
-            p.append(i)
-    return p
 
-def primes_lc():
-    return [i for i in range(100) if len(divisors(i)) == 2]
+primesL = []
+for i in range(101):
+    if len(divisorsLC(i)) == 2:
+        primesL.append(i)
 
-print(primes_lc())
+primesLC = [i for i in range(101) if len(divisorsLC(i)) == 2]
 
-def transpose(matrix):
-    ans = []
+def transposeL(matrix):
+    newMatrix = []
     for c in range(len(matrix[0])):
-        new_row = []
-        ans.append(new_row)
+        newRow = []
+        newMatrix.append(newRow)
         for r in matrix:
-            new_row.append(r[c])
-    return ans
+            newRow.append(r[c])
+    return newMatrix
 
-def transpose_lc(matrix):
+def transposeLC(matrix):
     return [[r[c] for r in matrix] for c in range(len(matrix[0]))]
-print(transpose_lc([[1,2,3],[4,5,6],[7,8,9]]))
 
-weird_wonky_pattern = []
-for i in range(9):
-    weird_wonky_pattern.append((i // 3) * (i % 3))
+print("-------1-------")
+print(firstL)
+print(firstLC)
 
-print([(i // 3) * (i % 3) for i in range(9)])
-print(weird_wonky_pattern)
+print("-------2-------")
+print(secondL)
+print(secondLC)
+
+print("-------3-------")
+print(thirdL)
+print(thirdLC)
+
+print("-------4-------")
+print(compositesL)
+print(compositesLC)
+
+print("-------5-------")
+print(primesL)
+print(primesLC)
+
+print("-------6-------")
+print(divisorsL(24))
+print(divisorsLC(24))
+
+print("-------7-------")
+print(transposeL([[1,2,3],[4,5,6],[7,8,9]]))
+print(transposeLC([[1,2,3],[4,5,6],[7,8,9]]))
+
+
