@@ -5,9 +5,9 @@
 
 firstL = []
 for i in range(5):
-    firstL.append(str(i*22))
+    firstL.append(str(i*2) + str(i*2))
 
-firstLC = [str(i*22) for i in range(5)]
+firstLC = [str(i*2) + str(i*2) for i in range(5)]
 
 secondL = []
 for i in range(5):
