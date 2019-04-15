@@ -17,9 +17,9 @@ secondLC = [i * 10 + 7 for i in range(5)]
 
 thirdL = []
 for i in range(9):
-    thirdL.append((i / 3) * (i % 3))
+    thirdL.append((i // 3) * (i % 3))
 
-thirdLC = [(i / 3) * (i % 3) for i in range(9)]
+thirdLC = [(i // 3) * (i % 3) for i in range(9)]
 
 def divisorsL(number):
     factors = []
