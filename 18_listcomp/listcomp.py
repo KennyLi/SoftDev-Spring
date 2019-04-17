@@ -1,6 +1,6 @@
 # Pear -- Jiayang Chen & Kenny Li
 # SoftDev2 pd7
-#
+# K18 -- Getting Clever with List Comprehension
 # 2019-04-16
 
 def triple(number):
