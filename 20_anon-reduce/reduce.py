@@ -16,11 +16,14 @@ def frequency(words, word):
 print(frequency(words,tests[0]))
 
 
-def total_frequency(words, wordlist):
-    return reduce((lambda x,y: x + y),[frequency(words,word) for word in wordlist])
-
-print(total_frequency(words,tests))
-                       
+def total_frequency(words, phrase):
+    wordlist = phrase.lower().split()
+    return reduce((lambda x,y: x+y), [1 if words[i:i+len(wordlist)] == wordlist else 0 \
+                                          for i in range(len(words) - len(wordlist))])
+print(total_frequency(words,'your time iS uP'))
+print(total_frequency(words,'holy moly'))
+print(total_frequency(words,'i saw'))
+print(total_frequency(words,'not quite'))
 
 def most_frequent(words):
     return reduce((lambda x,y: x if frequency(words,x) > frequency(words,y) else y), words)
