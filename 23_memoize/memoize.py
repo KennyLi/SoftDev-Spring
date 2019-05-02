@@ -33,4 +33,12 @@ def fib(n):
     else:
         return fib(n-1) + fib(n-2)
 
-print(fib(100))
+# 1,1,2,3,5,8,13,21,34,55
+print("fib 10 expecting 55")
+print(fib(10))
+
+print("fib 7 expecting 13")
+print(fib(7))
+
+print("fib 5 expecting 5")
+print(fib(5))
